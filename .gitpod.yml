@@ -1,6 +1,7 @@
 tasks:
   - name: "Start selective services"
     command: |
+      printf '\e[3J\033c\e[3J'
       IFS='|' read -ra services <<<"$SERVICES";
 
       for service in "${services[@]}"; do {
